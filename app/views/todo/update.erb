@@ -1,0 +1,4 @@
+<% form_for @todo, url(:todo, :update, :id => @todo.id) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit '更新' %>
+<% end %>

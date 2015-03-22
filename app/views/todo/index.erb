@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>todo</title>
+</head>
+<body>
+<h1>hello padrino erb!</h1>
+<%= link_to '新規登録', url(:todo, :new)  %>
+<table border="1">
+<thead>
+<tr>
+<th>no</th>
+<th>name</th>
+<th>remove</th>
+</tr>
+</thead>
+<tbody>
+<% @todos.each do |t| %>
+<tr>
+<td><%= link_to t.id, url(:todo, :update, :id => t.id) %></td>
+<td><%= t.name %></td>
+<td><%= link_to '削除', url(:todo, :remove, :id => t.id) %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
+</body>
+</html>
